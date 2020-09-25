@@ -1,1 +1,177 @@
 8:00-8:30= got riot api key
+
+8:30-10= trying to troubleshoot why im getting 404
+
+
+
+1. User inputs their summoner name and through the api we get a unique accountId
+{
+    "id": "a1Y8fXp9YOh10qCoCvLUOGHknPmIMG3AjhPI_SynRT15FAc",
+    "accountId": "zlQeHUiPV-R9D039aIchJPobwizapJVlEqL-2f1oFMffytg",
+    "puuid": "nCVJQncnw9Zyq26dEm-lJFOsXEh4GNc8y8r1N8YETQDUmQkXIPZheNdv4rfLke0r7hlvrmIdxLUtww",
+    "name": "Eyes of Sasuke",
+    "profileIconId": 4659,
+    "revisionDate": 1600813380000,
+    "summonerLevel": 81
+}
+from the accountId
+we can pull
+[
+    {
+        "leagueId": "5227942c-baee-4114-b681-c295a1a4f746",
+        "queueType": "RANKED_SOLO_5x5",
+        "tier": "SILVER",
+        "rank": "I",
+        "summonerId": "a1Y8fXp9YOh10qCoCvLUOGHknPmIMG3AjhPI_SynRT15FAc",
+        "summonerName": "Eyes of Sasuke",
+        "leaguePoints": 47,
+        "wins": 32,
+        "losses": 30,
+        "veteran": false,
+        "inactive": false,
+        "freshBlood": false,
+        "hotStreak": false
+    }
+]
+
+I was going to display win/lose/lp/rank and we take the leagueId for the third part
+{
+    "matches": [
+        {
+            "platformId": "NA1",
+            "gameId": 3590304617,
+            "champion": 42,
+            "queue": 450,
+            "season": 13,
+            "timestamp": 1601008413112,
+            "role": "DUO",
+            "lane": "MID"
+        },
+        {
+            "platformId": "NA1",
+            "gameId": 3590208956,
+            "champion": 58,
+            "queue": 450,
+            "season": 13,
+            "timestamp": 1601006665396,
+            "role": "DUO_CARRY",
+            "lane": "TOP"
+        },
+        {
+            "platformId": "NA1",
+            "gameId": 3590182300,
+            "champion": 5,
+            "queue": 440,
+            "season": 13,
+            "timestamp": 1601004546459,
+            "role": "NONE",
+            "lane": "JUNGLE"
+        },
+        {
+            "platformId": "NA1",
+            "gameId": 3586707099,
+            "champion": 111,
+            "queue": 420,
+            "season": 13,
+            "timestamp": 1600810443971,
+            "role": "DUO_SUPPORT",
+            "lane": "BOTTOM"
+        },
+        {
+            "platformId": "NA1",
+            "gameId": 3586731446,
+            "champion": 41,
+            "queue": 420,
+            "season": 13,
+            "timestamp": 1600808194324,
+            "role": "SOLO",
+            "lane": "TOP"
+        },
+
+we can display the match history and we take the gameId and we can display the match in more detail
+{
+    "frames": [
+        {
+            "participantFrames": {
+                "1": {
+                    "participantId": 1,
+                    "position": {
+                        "x": 560,
+                        "y": 581
+                    },
+                    "currentGold": 950,
+                    "totalGold": 950,
+                    "level": 3,
+                    "xp": 500,
+                    "minionsKilled": 0,
+                    "jungleMinionsKilled": 0,
+                    "dominionScore": 0,
+                    "teamScore": 0
+                },
+                "2": {
+                    "participantId": 2,
+                    "position": {
+                        "x": 560,
+                        "y": 361
+                    },
+                    "currentGold": 950,
+                    "totalGold": 950,
+                    "level": 3,
+                    "xp": 500,
+                    "minionsKilled": 0,
+                    "jungleMinionsKilled": 0,
+                    "dominionScore": 0,
+                    "teamScore": 0
+                },
+                "3": {
+                    "participantId": 3,
+                    "position": {
+                        "x": 351,
+                        "y": 293
+                    },
+                    "currentGold": 950,
+                    "totalGold": 950,
+                    "level": 3,
+                    "xp": 500,
+                    "minionsKilled": 0,
+                    "jungleMinionsKilled": 0,
+                    "dominionScore": 0,
+                    "teamScore": 0
+                },
+                "4": {
+                    "participantId": 4,
+                    "position": {
+                        "x": 221,
+                        "y": 471
+                    },
+                    "currentGold": 950,
+                    "totalGold": 950,
+                    "level": 3,
+                    "xp": 500,
+                    "minionsKilled": 0,
+                    "jungleMinionsKilled": 0,
+                    "dominionScore": 0,
+                    "teamScore": 0
+                },
+                "5": {
+                    "participantId": 5,
+                    "position": {
+                        "x": 311,
+                        "y": 649
+                    },
+                    "currentGold": 950,
+                    "totalGold": 950,
+                    "level": 3,
+                    "xp": 500,
+                    "minionsKilled": 0,
+                    "jungleMinionsKilled": 0,
+                    "dominionScore": 0,
+                    "teamScore": 0
+                },
+
+
+
+10:00-10:40 = replied to brooke and figured out the the data flow for riot api
+
+10:40-11:18 = drew rough wireframe and looking to ant design
+11:30 = probably going to use ant design
