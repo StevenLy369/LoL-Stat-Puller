@@ -175,3 +175,20 @@ we can display the match history and we take the gameId and we can display the m
 
 10:40-11:18 = drew rough wireframe and looking to ant design
 11:30 = probably going to use ant design
+11:56 lunch
+1:03 back from lunch
+1:30 join riot developer discord group to look at resources
+
+// LIST OF HOW THE DATA FLOWS WITH POSTMAN
+SUMMONERv4 -> to get ID by pasing summoner name as param
+https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/%27{SUMMONER NAME}%27?api_key={API_KEY}
+
+accountId -> to get 
+LEAGUE-v4
+https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{ACCOUNT_ID}?api_key={API_KEY}
+
+
+
+
+MATCH-V4 to get match history
+https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/{ACCOUNT ID}?api_key={API KEY}
