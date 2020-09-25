@@ -180,15 +180,26 @@ we can display the match history and we take the gameId and we can display the m
 1:30 join riot developer discord group to look at resources
 
 // LIST OF HOW THE DATA FLOWS WITH POSTMAN
-SUMMONERv4 -> to get ID by pasing summoner name as param
+SUMMONERv4 -> to get SUMMONERID by passing summoner name as param
 https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/%27{SUMMONER NAME}%27?api_key={API_KEY}
 
-accountId -> to get 
+ID -> to get LEAGUEID by passing through SUMMONERID
 LEAGUE-v4
 https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{ACCOUNT_ID}?api_key={API_KEY}
 
 
+CHAMPION-V3 -> SIMPLE API CALL THAT SHOWS WHAT CHAMPS ARE ON FREE ROTATION 
+https://na1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key={API_KEY}
 
-
-MATCH-V4 to get match history
+MATCH-V4 = (ACCOUNTID) -> DISPLAYS YOUR MATCHES AND SHOWS MATCHID
 https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/{ACCOUNT ID}?api_key={API KEY}
+
+MATCH-V4 = (MATCHID) -> MORE DETAILED INFOMATION ON SPECIFIC MATCHES
+https://na1.api.riotgames.com/lol/match/v4/matches/{MATCH_ID}?api_key={API_KEY}
+
+
+CHAMPION-MASTERY-V4 = (SUMMONERID) -> DISPLAYS MASTERY FOR CHAMPS
+https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/{SUMMONER_ID}?api_key={API_KEY}
+
+
+2:30 tested points with postman to make sure they all work and what they provide since riot has like 25 other api calls that look pretty simlar
