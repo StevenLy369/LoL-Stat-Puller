@@ -203,3 +203,6 @@ https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summ
 
 
 2:30 tested points with postman to make sure they all work and what they provide since riot has like 25 other api calls that look pretty simlar
+but I think im going to focus on these ones
+
+MAYBE just maybe do champion info
