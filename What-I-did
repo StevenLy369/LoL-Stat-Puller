@@ -180,10 +180,12 @@ we can display the match history and we take the gameId and we can display the m
 1:30 join riot developer discord group to look at resources
 
 // LIST OF HOW THE DATA FLOWS WITH POSTMAN
-SUMMONERv4 -> to get SUMMONERID by passing summoner name as param
+
+
+SUMMONERv4 = (SUMMONERNAME) = SUMMONERID 
 https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/%27{SUMMONER NAME}%27?api_key={API_KEY}
 
-ID -> to get LEAGUEID by passing through SUMMONERID
+LEAGUEV4 = (ACCOUNTID) = LEAGUEID 
 LEAGUE-v4
 https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{ACCOUNT_ID}?api_key={API_KEY}
 
