@@ -1,11 +1,11 @@
 import React from 'react';
-import Frontpage from '../src/component/FrontPage'
+import FrontpageControl from './component/FrontPageControl'
 import './App.css';
 
 function App() {
   return (
     <React.Fragment>
-      <Frontpage />
+      <FrontpageControl />
     </React.Fragment>
     
   )

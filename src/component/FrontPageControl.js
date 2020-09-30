@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { makeApiCall } from '../actions'
+import SummonerInfo from './SummonerInfo';
 
 
 class FrontPage extends React.Component {
@@ -19,7 +20,7 @@ class FrontPage extends React.Component {
 
     render() {
         
-        const { error, isLoading, SummonerDTO } = this.props;
+        const { error, isLoading,SummonerDTO} = this.props;
         if (error) {
           return <React.Fragment>Error: {error.message}</React.Fragment>;
         } else if (isLoading) {
@@ -27,9 +28,8 @@ class FrontPage extends React.Component {
         } else {
           return (
             <React.Fragment>
-                    <p>Summoner Name: {SummonerDTO.name}</p>
-                    <img src= {`http://ddragon.bangingheads.net/cdn/10.19.1/img/profileicon/${SummonerDTO.profileIconId}.png`} alt="profile-icon"></img>
-                    <h3>Summoner Id: {SummonerDTO.id}</h3>
+                    <SummonerInfo />
+                   <p>{SummonerDTO.name}</p>
                     
                     
                
