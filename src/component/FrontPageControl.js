@@ -29,7 +29,7 @@ class FrontPage extends React.Component {
           return (
             <React.Fragment>
                     <SummonerInfo SummonerDTO = {SummonerDTO} />
-                   <p>{SummonerDTO.name}</p>
+                   {/* <p>{SummonerDTO.name}</p> */}
                     
                     
                

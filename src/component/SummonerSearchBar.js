@@ -13,4 +13,4 @@ function SummonerSearchBar()  {
 }
 
 
-export default SummonerSearchBar
+export default SummonerSearchBar;

@@ -11,6 +11,7 @@ import middlewareLogger from './middleware/middleware-logger';
 
 const store = createStore(reducer, applyMiddleware(thunkMiddleware, middlewareLogger));
 
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
