@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { makeApiCall, makeApiSummonerCall } from '../actions'
+import { makeApiCall} from '../actions/index'
 import SummonerInfo from './SummonerInfo';
 import SummonerSearchBar from './SummonerSearchBar';
 
@@ -8,58 +8,19 @@ import SummonerSearchBar from './SummonerSearchBar';
 class FrontPage extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-          formVisibleOnPage:false
-        }
     }
 
 
-    // componentDidMount(){
-    //     const {dispatch} = this.props;
-    //     dispatch(makeApiCall());
-    //     // dispatch(makeApiSummonerCall());
-    // }
+    componentDidMount(){
+        const {dispatch} = this.props;
+        dispatch(makeApiCall());
+        // dispatch(makeApiSummonerCall());
+    }
 
     onNewSummonerSearch(summonerName){
        const {dispatch} = this.props;
       dispatch(makeApiCall(summonerName));
     }
-
-
-
-
-  //   export const makeApiCall = (summonerName) => {
-  //     return dispatch => {
-  //       dispatch(requestSummonerInfo);
-  //       return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${process.env.REACT_APP_API_KEY}`)
-  //         .then(response => response.json())
-  //         .then(
-  //           (jsonifiedResponse) => {
-  //             dispatch(summonerSuccess(jsonifiedResponse));
-          
-  //           })
-  //         .catch((error) => {
-  //           dispatch(summonerFailure(error));
-  //         });
-  //     }
-  // }
-  
-  
-  // export const makeApiSummonerCall = (accountId) => {
-  //   return dispatch => {
-  //     dispatch(requestSummonerInfo);
-  //     return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/1SMzcsij_3ou0nrbwsJN7RyIZYT4dW0YuBit9NWFiXaTUxQ?api_key=${process.env.REACT_APP_API_KEY}`)
-  //       .then(response => response.json())
-  //       .then(
-  //         (jsonifiedResponse) => {
-  //           dispatch(summonerSuccess(jsonifiedResponse));
-        
-  //         })
-  //       .catch((error) => {
-  //         dispatch(summonerFailure(error));
-  //       });
-  //   }
-  // }
 
 
 
@@ -79,7 +40,7 @@ class FrontPage extends React.Component {
                  
                     
                     
-
+               
             
             </React.Fragment>
           );
@@ -88,7 +49,13 @@ class FrontPage extends React.Component {
 
 }
 
+const mapStateToProps = state => {
+    return {
+        SummonerDTO: state.SummonerDTO,
+        isLoading: state.isLoading,
+        error: state.error
+    }
+}
 
 
-
-export default FrontPage;
+export default connect(mapStateToProps)(FrontPage);

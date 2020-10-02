@@ -29,4 +29,3 @@ SummonerInfo.propTypes = {
 
 
 export default SummonerInfo
-

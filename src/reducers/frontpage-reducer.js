@@ -1,4 +1,4 @@
-import * as c from '../actions/ActionsTypes';
+import * as c from '../actions/actionType';
 
 let initialState = {
 	isLoading: false,
