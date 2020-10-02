@@ -3,19 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, applyMiddleware } from 'redux';
-import reducer from '../src/reducers/frontpage-reducer';
-import { Provider } from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
-import middlewareLogger from './middleware/middleware-logger';
-
-const store = createStore(reducer, applyMiddleware(thunkMiddleware, middlewareLogger));
-
 
 ReactDOM.render(
-  <Provider store={store}>
+  <React.StrictMode>
     <App />
-  </Provider>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
