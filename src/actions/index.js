@@ -17,10 +17,10 @@ export const summonerFailure = (error) => ({
 
 
 
-export const makeApiCall = () => {
+export const makeApiCall = (summonerName) => {
     return dispatch => {
       dispatch(requestSummonerInfo);
-      return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Wang%20Pang?api_key=${process.env.REACT_APP_API_KEY}`)
+      return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${process.env.REACT_APP_API_KEY}`)
         .then(response => response.json())
         .then(
           (jsonifiedResponse) => {
@@ -32,3 +32,20 @@ export const makeApiCall = () => {
         });
     }
 }
+
+
+// export const makeApiSummonerCall = (accountId) => {
+//   return dispatch => {
+//     dispatch(requestSummonerInfo);
+//     return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/1SMzcsij_3ou0nrbwsJN7RyIZYT4dW0YuBit9NWFiXaTUxQ?api_key=${process.env.REACT_APP_API_KEY}`)
+//       .then(response => response.json())
+//       .then(
+//         (jsonifiedResponse) => {
+//           dispatch(summonerSuccess(jsonifiedResponse));
+      
+//         })
+//       .catch((error) => {
+//         dispatch(summonerFailure(error));
+//       });
+//   }
+// }
