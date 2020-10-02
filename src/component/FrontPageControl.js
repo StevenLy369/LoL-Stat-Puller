@@ -28,7 +28,7 @@ class FrontPage extends React.Component {
         } else {
           return (
             <React.Fragment>
-                    <SummonerInfo />
+                    <SummonerInfo SummonerDTO = {SummonerDTO} />
                    <p>{SummonerDTO.name}</p>
                     
                     
