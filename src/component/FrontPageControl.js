@@ -11,15 +11,20 @@ class FrontPage extends React.Component {
     }
 
 
-    componentDidMount(){
-        const {dispatch} = this.props;
-        dispatch(makeApiCall());
-        // dispatch(makeApiSummonerCall());
-    }
+    // componentDidMount(){
+    //     const {dispatch} = this.props;
+    //     dispatch(makeApiCall());
+    //     // dispatch(makeApiSummonerCall());
+    // }
 
-    onNewSummonerSearch(summonerName){
-       const {dispatch} = this.props;
+    handleSummonerSearch = (summonerName) => {
+      const {dispatch} = this.props;
       dispatch(makeApiCall(summonerName));
+
+
+       
+
+      
     }
 
 
@@ -35,7 +40,7 @@ class FrontPage extends React.Component {
         } else {
           return (
             <React.Fragment>
-              <SummonerSearchBar onNewSummonerSearch = {this.onNewSummonerSearch}/>
+              <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
                     <SummonerInfo  SummonerDTO = {SummonerDTO}/>
                  
                     
@@ -43,7 +48,7 @@ class FrontPage extends React.Component {
                
             
             </React.Fragment>
-          );
+          )
         }
       }
 

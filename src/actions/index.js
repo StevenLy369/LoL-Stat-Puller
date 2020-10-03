@@ -18,9 +18,11 @@ export const summonerFailure = (error) => ({
 
 
 export const makeApiCall = (summonerName) => {
+  console.log(summonerName)
+
     return dispatch => {
       dispatch(requestSummonerInfo);
-      return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${process.env.REACT_APP_API_KEY}`)
+      return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName.summonerName}?api_key=${process.env.REACT_APP_API_KEY}`)
         .then(response => response.json())
         .then(
           (jsonifiedResponse) => {

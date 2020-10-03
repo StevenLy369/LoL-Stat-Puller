@@ -9,7 +9,6 @@ function SummonerInfo(props){
     
      
 
-
     return (
         <React.Fragment>
              <h1>THIS IS SUMMONER INFO</h1>

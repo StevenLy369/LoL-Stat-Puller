@@ -6,10 +6,13 @@ function SummonerSearchBar(props)  {
 
     function handleNewSummonerSearch(event){
         event.preventDefault();
+        console.log(props.summonerName)
         props.onNewSummonerSearch({
-            summonerName:event.target.name.value
+            summonerName:event.target.summonerName.value
+            
         })
-        console.log(event.target.name.value);
+        
+        // console.log(event.target.summonerName.value)
     }
 
     return(
@@ -17,7 +20,7 @@ function SummonerSearchBar(props)  {
         <form onSubmit = {handleNewSummonerSearch}>
             <input
             type="text"
-            name='name' />
+            name='summonerName' />
             <button type="submit">SEARCH!</button>
         </form>
     </React.Fragment>
