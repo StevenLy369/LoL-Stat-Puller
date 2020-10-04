@@ -12,7 +12,7 @@ function SummonerSearchBar(props)  {
             
         })
         
-        // console.log(event.target.summonerName.value)
+        
     }
 
     return(

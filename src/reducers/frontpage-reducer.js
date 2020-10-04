@@ -16,6 +16,7 @@ export default (state = initialState, action) => {
 			return Object.assign({}, state, {
 				isLoading: false,
 				SummonerDTO: action.SummonerDTO
+				
 			});
 		case c.GET_SUMMONER_FAILURE:
 			return Object.assign({}, state, {

@@ -6,15 +6,18 @@ import PropTypes from "prop-types";
 
 
 function SummonerInfo(props){
+
+    // const {SummonerDTO} = this.props
     
      
 
     return (
         <React.Fragment>
-             <h1>THIS IS SUMMONER INFO</h1>
+             
              <p>Summoner Name: {props.SummonerDTO.name}</p>
              <p>Summoner Level: {props.SummonerDTO.summonerLevel}</p>
              <img src= {`http://ddragon.bangingheads.net/cdn/10.19.1/img/profileicon/${props.SummonerDTO.profileIconId}.png`} alt="profile-icon"></img>
+             
                     
                     
          </React.Fragment>

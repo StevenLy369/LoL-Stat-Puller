@@ -6,7 +6,7 @@ export const requestSummonerInfo = () => ({
 
 export const summonerSuccess = (SummonerDTO) => ({
     type: c.GET_SUMMONER_SUCCESS,
-    SummonerDTO
+    SummonerDTO,
     
 });
 
@@ -15,39 +15,50 @@ export const summonerFailure = (error) => ({
     error
 })
 
+export const matchHistorySuccess = (matchHistory) => ({
+  type: c.GET_MATCHHISTORY_SUCCESS,
+  matchHistory
+})
+
+export const requestAccountInfo = () => ({
+  type: c.REQUEST_ACCOUNT_INFO
+})
 
 
-export const makeApiCall = (summonerName) => {
-  console.log(summonerName)
+
+export const makeApiCall = (SummonerDTO) => {
+  
 
     return dispatch => {
       dispatch(requestSummonerInfo);
-      return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName.summonerName}?api_key=${process.env.REACT_APP_API_KEY}`)
+      return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${SummonerDTO.summonerName}?api_key=${process.env.REACT_APP_API_KEY}`)
         .then(response => response.json())
         .then(
           (jsonifiedResponse) => {
-            dispatch(summonerSuccess(jsonifiedResponse));
-        
-          })
+            dispatch(summonerSuccess(jsonifiedResponse))})
         .catch((error) => {
           dispatch(summonerFailure(error));
         });
     }
+
+    
 }
 
 
-// export const makeApiSummonerCall = (accountId) => {
-//   return dispatch => {
-//     dispatch(requestSummonerInfo);
-//     return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/1SMzcsij_3ou0nrbwsJN7RyIZYT4dW0YuBit9NWFiXaTUxQ?api_key=${process.env.REACT_APP_API_KEY}`)
-//       .then(response => response.json())
-//       .then(
-//         (jsonifiedResponse) => {
-//           dispatch(summonerSuccess(jsonifiedResponse));
+export const makeApiSummonerCall = (SummonerDTO) => {
+  return dispatch => {
+    dispatch(requestAccountInfo);
+    return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${SummonerDTO.id}?api_key=${process.env.REACT_APP_API_KEY}`)
+      .then(response => response.json())
+      .then(
+        (jsonifiedResponse) => {
+          dispatch(matchHistorySuccess(jsonifiedResponse));
+          console.log(jsonifiedResponse)
+          
       
-//         })
-//       .catch((error) => {
-//         dispatch(summonerFailure(error));
-//       });
-//   }
-// }
+        })
+      .catch((error) => {
+        dispatch(summonerFailure(error));
+      });
+  }
+}

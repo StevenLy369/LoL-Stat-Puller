@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { makeApiCall} from '../actions/index'
+import { makeApiCall,makeApiSummonerCall} from '../actions/index'
 import SummonerInfo from './SummonerInfo';
 import SummonerSearchBar from './SummonerSearchBar';
 
@@ -22,8 +22,13 @@ class FrontPage extends React.Component {
       dispatch(makeApiCall(summonerName));
 
 
-       
+    }
 
+    runthisshit = () => {
+      
+     const {dispatch} = this.props;
+      dispatch(makeApiSummonerCall())
+      
       
     }
 
@@ -40,6 +45,7 @@ class FrontPage extends React.Component {
         } else {
           return (
             <React.Fragment>
+              <button onClick={this.runthisshit}>onClick</button>
               <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
                     <SummonerInfo  SummonerDTO = {SummonerDTO}/>
                  
