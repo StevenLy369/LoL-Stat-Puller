@@ -10,8 +10,6 @@ function SummonerSearchBar(props)  {
             summonerName:event.target.summonerName.value
             
         })
-        
-        
     }
 
     return(

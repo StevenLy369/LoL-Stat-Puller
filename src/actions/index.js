@@ -45,8 +45,6 @@ export const makeApiCall = (SummonerDTO) => {
         
     }
 }
-
-
 export const makeApiSummonerCall = (id) => {
   
   return dispatch => {
@@ -55,10 +53,12 @@ export const makeApiSummonerCall = (id) => {
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
-          dispatch(accountSuccess(jsonifiedResponse));
+          dispatch(accountSuccess(jsonifiedResponse)); 
         })
+        
       .catch((error) => {
         dispatch(summonerFailure(error));
       });
   }
+  
 }

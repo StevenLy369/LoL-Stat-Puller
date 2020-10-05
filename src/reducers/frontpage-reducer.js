@@ -3,7 +3,7 @@ import * as c from '../actions/actionType';
 let initialState = {
 	isLoading: false,
 	SummonerDTO: [],
-	AccountInfo: [],
+	AccountInfo: {},
 	error: null
 };
 

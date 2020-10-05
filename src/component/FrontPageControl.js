@@ -18,32 +18,26 @@ class FrontPage extends React.Component {
     // }
 
     handleSummonerSearch = (summonerName) => {
-      const {dispatch, SummonerDTO} = this.props;
+      const {dispatch} = this.props;
       dispatch(makeApiCall(summonerName));
+      
+     
  
       // dispatch(makeApiSummonerCall())
-      
-
-
-
     }
 
     runthis = () => {
       
      const {dispatch,SummonerDTO} = this.props;
        dispatch(makeApiSummonerCall(SummonerDTO.id))
-      console.log(SummonerDTO.name)
-      console.log(SummonerDTO.id)
+       
+
       
       
     }
-
-
-
-
     render() {
         
-        const { error, isLoading,SummonerDTO} = this.props;
+        const { error, isLoading,SummonerDTO,AccountInfo} = this.props;
         if (error) {
           return <React.Fragment>Error: {error.message}</React.Fragment>;
         } else if (isLoading) {
@@ -53,12 +47,12 @@ class FrontPage extends React.Component {
             <React.Fragment>
               <button onClick={this.runthis}>onClick</button>
               <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
-                    <SummonerInfo  SummonerDTO = {SummonerDTO}/>
+                    <SummonerInfo  SummonerDTO = {SummonerDTO} AccountInfo = {AccountInfo}/>
                  
                     
                     
                
-            
+
             </React.Fragment>
           )
         }
@@ -69,6 +63,7 @@ class FrontPage extends React.Component {
 const mapStateToProps = state => {
     return {
         SummonerDTO: state.SummonerDTO,
+        AccountInfo: state.AccountInfo,
         isLoading: state.isLoading,
         error: state.error
     }
