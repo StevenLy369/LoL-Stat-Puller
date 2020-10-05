@@ -23,6 +23,7 @@ function SummonerInfo(props) {
             <p>Summoner Name: {SummonerDTO.name}</p>
             <p>Summoner Level: {SummonerDTO.summonerLevel}</p>
             <p>{AccountInfo[0] ? AccountInfo[0].tier : null} {AccountInfo[0] ? AccountInfo[0].rank : null}</p>
+            {/* <p>{AccountInfo[0].tier === "PLATINUM" ? <img src= {`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/05_platinum/images/platinum_baseface_matte.png`}></img>: null}</p> */}
             <p>Wins:{AccountInfo[0] ? AccountInfo[0].wins : null}</p>
             <p>Losses:{AccountInfo[0] ? AccountInfo[0].losses : null}</p>
             <p>Lp: {AccountInfo[0] ? AccountInfo[0].leaguePoints : null}</p>
