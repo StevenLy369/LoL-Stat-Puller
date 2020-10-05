@@ -47,7 +47,7 @@ class FrontPage extends React.Component {
             <React.Fragment>
               <button onClick={this.runthis}>onClick</button>
               <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
-                    <SummonerInfo  SummonerDTO = {SummonerDTO} AccountInfo = {AccountInfo}/>
+              <SummonerInfo  SummonerDTO = {SummonerDTO} AccountInfo = {AccountInfo}/>
                  
                     
                     
