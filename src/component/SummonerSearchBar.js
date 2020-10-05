@@ -6,7 +6,6 @@ function SummonerSearchBar(props)  {
 
     function handleNewSummonerSearch(event){
         event.preventDefault();
-        console.log(props.summonerName)
         props.onNewSummonerSearch({
             summonerName:event.target.summonerName.value
             

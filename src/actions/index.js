@@ -15,13 +15,15 @@ export const summonerFailure = (error) => ({
     error
 })
 
-export const matchHistorySuccess = (matchHistory) => ({
-  type: c.GET_MATCHHISTORY_SUCCESS,
-  matchHistory
-})
+
 
 export const requestAccountInfo = () => ({
   type: c.REQUEST_ACCOUNT_INFO
+})
+
+export const accountSuccess = (AccountInfo) => ({
+  type: c.GET_ACCOUNT_SUCCESS,
+  AccountInfo,
 })
 
 
@@ -35,13 +37,17 @@ export const makeApiCall = (SummonerDTO) => {
         .then(response => response.json())
         .then(
           (jsonifiedResponse) => {
-            dispatch(summonerSuccess(jsonifiedResponse))})
+            dispatch(summonerSuccess(jsonifiedResponse))  
+          })
+           
         .catch((error) => {
           dispatch(summonerFailure(error));
+          
         });
+        
     }
 
-    
+  
 }
 
 
@@ -52,10 +58,9 @@ export const makeApiSummonerCall = (SummonerDTO) => {
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
-          dispatch(matchHistorySuccess(jsonifiedResponse));
-          console.log(jsonifiedResponse)
-          
-      
+          dispatch(accountSuccess(jsonifiedResponse));
+          console.log(SummonerDTO)
+          console.log(SummonerDTO.id)
         })
       .catch((error) => {
         dispatch(summonerFailure(error));

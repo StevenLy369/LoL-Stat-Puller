@@ -12,6 +12,8 @@
 
 * Clone this repository.
 * Open in the text editor of your choice
+* Get a API key fro Riot games at https://developer.riotgames.com/
+* Put Key inside .env file
 * Open terminal and run npm install and npm start
 
 

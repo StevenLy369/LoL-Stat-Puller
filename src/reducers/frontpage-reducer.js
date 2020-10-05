@@ -3,6 +3,7 @@ import * as c from '../actions/actionType';
 let initialState = {
 	isLoading: false,
 	SummonerDTO: [],
+	AccountInfo: [],
 	error: null
 };
 
@@ -17,6 +18,11 @@ export default (state = initialState, action) => {
 				isLoading: false,
 				SummonerDTO: action.SummonerDTO
 				
+			});
+			case c.GET_ACCOUNT_SUCCESS:
+			return Object.assign({}, state, {
+				isLoading: false,
+				AccountInfo: action.AccountInfo
 			});
 		case c.GET_SUMMONER_FAILURE:
 			return Object.assign({}, state, {

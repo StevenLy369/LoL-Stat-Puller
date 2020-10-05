@@ -18,16 +18,18 @@ class FrontPage extends React.Component {
     // }
 
     handleSummonerSearch = (summonerName) => {
-      const {dispatch} = this.props;
+      const {dispatch,SummonerDTO} = this.props;
       dispatch(makeApiCall(summonerName));
+      // dispatch(makeApiSummonerCall())
+
 
 
     }
 
-    runthisshit = () => {
+    runthis = (SummonerDTO) => {
       
      const {dispatch} = this.props;
-      dispatch(makeApiSummonerCall())
+      dispatch(makeApiSummonerCall(SummonerDTO))
       
       
     }
@@ -45,7 +47,7 @@ class FrontPage extends React.Component {
         } else {
           return (
             <React.Fragment>
-              <button onClick={this.runthisshit}>onClick</button>
+              <button onClick={this.runthis}>onClick</button>
               <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
                     <SummonerInfo  SummonerDTO = {SummonerDTO}/>
                  
