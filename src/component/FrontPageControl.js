@@ -18,18 +18,22 @@ class FrontPage extends React.Component {
     // }
 
     handleSummonerSearch = (summonerName) => {
-      const {dispatch,SummonerDTO} = this.props;
+      const {dispatch, SummonerDTO} = this.props;
       dispatch(makeApiCall(summonerName));
+ 
       // dispatch(makeApiSummonerCall())
+      
 
 
 
     }
 
-    runthis = (SummonerDTO) => {
+    runthis = () => {
       
-     const {dispatch} = this.props;
-      dispatch(makeApiSummonerCall(SummonerDTO))
+     const {dispatch,SummonerDTO} = this.props;
+       dispatch(makeApiSummonerCall(SummonerDTO.id))
+      console.log(SummonerDTO.name)
+      console.log(SummonerDTO.id)
       
       
     }
