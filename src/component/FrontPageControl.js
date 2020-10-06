@@ -12,11 +12,10 @@ class FrontPage extends React.Component {
 
 
     handleSummonerSearch = (summonerName) => {
-      const {dispatch} = this.props;
+      const {dispatch,SummonerDTO} = this.props;
       dispatch(makeApiCall(summonerName));
+      dispatch(makeApiSummonerCall(SummonerDTO.id))
       
-     
- 
      
     }
 
@@ -24,9 +23,6 @@ class FrontPage extends React.Component {
       
      const {dispatch,SummonerDTO} = this.props;
        dispatch(makeApiSummonerCall(SummonerDTO.id))
-       
-
-      
       
     }
     render() {

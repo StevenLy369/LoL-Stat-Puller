@@ -29,6 +29,7 @@ function SummonerInfo(props) {
             <p>{AccountInfo[0] && AccountInfo[0].tier ==="GOLD" ? <img src= {`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/04_gold/images/gold_baseface_matte.png`} alt="rank metal"/> : null}</p>
             <p>{AccountInfo[0] && AccountInfo[0].tier ==="DIAMOND" ? <img src= {`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/06_diamond/images/diamond_baseface_matte.png`} alt="rank metal"/> : null}</p>
             <p>{AccountInfo[0] && AccountInfo[0].tier ==="GRANDMASTER" ? <img src= {`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/08_grandmaster/images/grandmaster_baseface_matte.png`} alt="rank metal"/> : null}</p>
+            <p>{AccountInfo[0] && AccountInfo[0].tier ==="BRONZE" ? <img src= {`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/02_bronze/images/bronze_baseface_matte.png`} alt="rank metal"/> : null}</p>
             <p>Wins:{AccountInfo[0] ? AccountInfo[0].wins : null}</p>
             <p>Losses:{AccountInfo[0] ? AccountInfo[0].losses : null}</p>
             <p>Lp: {AccountInfo[0] ? AccountInfo[0].leaguePoints : null}</p>

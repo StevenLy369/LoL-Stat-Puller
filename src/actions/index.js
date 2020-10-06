@@ -15,6 +15,10 @@ export const summonerFailure = (error) => ({
     error
 })
 
+export const requestMatchListHistory = () => ({
+  type:c.REQUEST_MATCHLIST_INFO
+})
+
 
 
 export const requestAccountInfo = () => ({
@@ -24,6 +28,11 @@ export const requestAccountInfo = () => ({
 export const accountSuccess = (AccountInfo) => ({
   type: c.GET_ACCOUNT_SUCCESS,
   AccountInfo,
+})
+
+export const matchHistorySuccess = (MatchListDTO) => ({
+  type: c.GET_ACCOUNT_SUCCESS,
+  MatchListDTO,
 })
 
 
@@ -46,7 +55,6 @@ export const makeApiCall = (SummonerDTO) => {
     }
 }
 export const makeApiSummonerCall = (id) => {
-  
   return dispatch => {
     dispatch(requestAccountInfo);
     return fetch( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?api_key=${process.env.REACT_APP_API_KEY}`)
@@ -54,6 +62,7 @@ export const makeApiSummonerCall = (id) => {
       .then(
         (jsonifiedResponse) => {
           dispatch(accountSuccess(jsonifiedResponse)); 
+          console.log("YOOOOO")
         })
         
       .catch((error) => {
@@ -61,4 +70,12 @@ export const makeApiSummonerCall = (id) => {
       });
   }
   
+}
+
+
+export const makeMatchHistoryCall = (id) => {
+  return dispatch => {
+    dispatch(requestMatchListHistory);
+    return fetch ( `https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${id}`)
+  }
 }

@@ -4,6 +4,7 @@ let initialState = {
 	isLoading: false,
 	SummonerDTO: [],
 	AccountInfo: {},
+	MatchListDTO:[],
 	error: null
 };
 
@@ -24,6 +25,11 @@ export default (state = initialState, action) => {
 				isLoading: false,
 				AccountInfo: action.AccountInfo
 			});
+			case c.GET_MATCHLIST_SUCCESS:
+				return Object.assign({} ,state, {
+					isLoading:false,
+					MatchListDTO: action.MatchListDTO
+				});
 		case c.GET_SUMMONER_FAILURE:
 			return Object.assign({}, state, {
 				isLoading: false,
