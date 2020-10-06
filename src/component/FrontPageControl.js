@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { makeApiCall,makeApiSummonerCall, makeMatchHistoryCall} from '../actions/index'
 import SummonerInfo from './SummonerInfo';
 import SummonerSearchBar from './SummonerSearchBar';
+import MatchHistory from './MatchHistory';
 
 
 class FrontPage extends React.Component {
@@ -47,6 +48,7 @@ class FrontPage extends React.Component {
 
               <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
               <SummonerInfo  SummonerDTO = {SummonerDTO} AccountInfo = {AccountInfo}/>
+              <MatchHistory />
             </React.Fragment>
           )
         }
