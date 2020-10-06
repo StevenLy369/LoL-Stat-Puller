@@ -23,12 +23,14 @@ class FrontPage extends React.Component {
       
      const {dispatch,SummonerDTO} = this.props;
        dispatch(makeApiSummonerCall(SummonerDTO.id))
+       console.log(SummonerDTO.accountId)
       
     }
 
     handleMatchListSearch = () => {
       const {dispatch,SummonerDTO} = this.props
       dispatch(makeMatchHistoryCall(SummonerDTO.accountId))
+
     }
     render() {
         
@@ -42,7 +44,7 @@ class FrontPage extends React.Component {
             <React.Fragment>
               <button onClick={this.handleAccountSearch}>Check Rank</button>
               <button onClick={this.handleMatchListSearch}>Check Match history</button>
-              
+
               <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
               <SummonerInfo  SummonerDTO = {SummonerDTO} AccountInfo = {AccountInfo}/>
             </React.Fragment>

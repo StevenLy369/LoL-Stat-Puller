@@ -73,10 +73,10 @@ export const makeApiSummonerCall = (id) => {
 }
 
 
-export const makeMatchHistoryCall = (id) => {
+export const makeMatchHistoryCall = (accountId) => {
   return dispatch => {
     dispatch(requestMatchListHistory);
-    return fetch ( `https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${id}`)
+    return fetch ( `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${accountId}?api_key=${process.env.REACT_APP_API_KEY}`)
     .then(reponse => reponse.json())
     .then(
       (jsonifiedResponse) => {
