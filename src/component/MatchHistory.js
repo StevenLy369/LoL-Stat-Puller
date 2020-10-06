@@ -9,7 +9,7 @@ function MatchHistory (){
 
 
     return(
-<h1>This is match history</h1>
+<h1>This is match history Page</h1>
 
 
     )
