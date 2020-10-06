@@ -1,0 +1,28 @@
+Name of Student: Steven Ly
+
+Name of Project: LoL Stat Puller
+
+Project's Purpose or Goal: Users will be able to look up their account by summoner name. The app will display their data.
+
+List the absolute minimum features the project requires to meet this purpose or goal:
+- Users can look up their account by user name
+- Users will be able to see overall stats and basic account info
+- Picture api will be incorporated so users can see their profile icon and icon of their rank 
+
+What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
+-React.js
+-Redux
+-RIOT API
+-DDragon CDN
+
+If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
+-Displaying match history and having the user click will show more detailed results of that specific match.
+-Additional styling
+-Refactor code
+
+What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
+I think the tools up above should cover most.
+
+
+Is there anything else you'd like your instructor to know?
+Thank you!
