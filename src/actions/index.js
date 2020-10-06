@@ -31,7 +31,7 @@ export const accountSuccess = (AccountInfo) => ({
 })
 
 export const matchHistorySuccess = (MatchListDTO) => ({
-  type: c.GET_ACCOUNT_SUCCESS,
+  type: c.GET_MATCHLIST_SUCCESS,
   MatchListDTO,
 })
 
@@ -62,7 +62,7 @@ export const makeApiSummonerCall = (id) => {
       .then(
         (jsonifiedResponse) => {
           dispatch(accountSuccess(jsonifiedResponse)); 
-          console.log("YOOOOO")
+          
         })
         
       .catch((error) => {
@@ -77,5 +77,16 @@ export const makeMatchHistoryCall = (id) => {
   return dispatch => {
     dispatch(requestMatchListHistory);
     return fetch ( `https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${id}`)
-  }
+    .then(reponse => reponse.json())
+    .then(
+      (jsonifiedResponse) => {
+        dispatch(matchHistorySuccess(jsonifiedResponse)); 
+        console.log(jsonifiedResponse)
+      })
+      
+    .catch((error) => {
+      dispatch(summonerFailure(error));
+    });
+}
+
 }

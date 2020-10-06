@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { makeApiCall,makeApiSummonerCall} from '../actions/index'
+import { makeApiCall,makeApiSummonerCall, makeMatchHistoryCall} from '../actions/index'
 import SummonerInfo from './SummonerInfo';
 import SummonerSearchBar from './SummonerSearchBar';
 
@@ -19,11 +19,16 @@ class FrontPage extends React.Component {
      
     }
 
-    runthis = () => {
+    handleAccountSearch = () => {
       
      const {dispatch,SummonerDTO} = this.props;
        dispatch(makeApiSummonerCall(SummonerDTO.id))
       
+    }
+
+    handleMatchListSearch = () => {
+      const {dispatch,SummonerDTO} = this.props
+      dispatch(makeMatchHistoryCall(SummonerDTO.accountId))
     }
     render() {
         
@@ -35,7 +40,9 @@ class FrontPage extends React.Component {
         } else {
           return (
             <React.Fragment>
-              <button onClick={this.runthis}>onClick</button>
+              <button onClick={this.handleAccountSearch}>Check Rank</button>
+              <button onClick={this.handleMatchListSearch}>Check Match history</button>
+              
               <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
               <SummonerInfo  SummonerDTO = {SummonerDTO} AccountInfo = {AccountInfo}/>
             </React.Fragment>
