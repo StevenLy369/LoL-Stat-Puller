@@ -3,13 +3,28 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 
 
-function MatchHistory (){
+function MatchHistory (props){
+    const { MatchListDTO } = props;
+    
 
 
 
 
     return(
-<h1>This is match history Page</h1>
+        <React.Fragment>
+            {MatchListDTO.map((match) =>
+                <Match
+                    champion ={match.champion}
+                    role = {match.role}
+
+                />
+
+            
+            
+            
+            
+            )}
+        </React.Fragment>
 
 
     )

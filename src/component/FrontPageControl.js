@@ -24,7 +24,7 @@ class FrontPage extends React.Component {
       
      const {dispatch,SummonerDTO} = this.props;
        dispatch(makeApiSummonerCall(SummonerDTO.id))
-       console.log(SummonerDTO.accountId)
+       
       
     }
 
@@ -35,7 +35,7 @@ class FrontPage extends React.Component {
     }
     render() {
         
-        const { error, isLoading,SummonerDTO,AccountInfo} = this.props;
+        const { error, isLoading,SummonerDTO,AccountInfo,MatchListDTO} = this.props;
         if (error) {
           return <React.Fragment>Error: {error.message}</React.Fragment>;
         } else if (isLoading) {
@@ -48,7 +48,7 @@ class FrontPage extends React.Component {
 
               <SummonerSearchBar onNewSummonerSearch = {this.handleSummonerSearch}/>
               <SummonerInfo  SummonerDTO = {SummonerDTO} AccountInfo = {AccountInfo}/>
-              <MatchHistory />
+              <MatchHistory  MatchListDTO = {MatchListDTO}/>
             </React.Fragment>
           )
         }
