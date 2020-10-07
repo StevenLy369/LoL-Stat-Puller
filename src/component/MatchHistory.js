@@ -13,10 +13,10 @@ function MatchHistory(props) {
     return (
         <React.Fragment>
            
-           {/* <p>Champion:{ MatchListDTO.matches[0] ? MatchListDTO.matches[0].champion : null}</p>
-           <p>Role:{ MatchListDTO.matches[0] ? MatchListDTO.matches[0].role : null}</p>
-           <p>Lane: {MatchListDTO.matches[0] ? MatchListDTO.matches[0].lane : null}</p> */}
-        
+            <p>Champion:{ MatchListDTO.matches && MatchListDTO.matches[0] ? MatchListDTO.matches[0].champion : null}</p>
+           {/* <p>Role:{ MatchListDTO.matches[0] ? MatchListDTO.matches[0].role : null}</p>
+           <p>Lane: {MatchListDTO.matches[0] ? MatchListDTO.matches[0].lane : null}</p>  */}
+         
 
         </React.Fragment>
 
