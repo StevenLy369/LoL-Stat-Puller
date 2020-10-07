@@ -1,49 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
+import Match from './Match'
 
 
-function MatchHistory (props){
+
+function MatchHistory(props) {
     const { MatchListDTO } = props;
-    
+  
 
 
-
-
-    return(
+    return (
         <React.Fragment>
-            {MatchListDTO.map((match) =>
-                <Match
-                    champion ={match.champion}
-                    role = {match.role}
+           
+           <p>Champion:{MatchListDTO && MatchListDTO.matches[0] ? MatchListDTO.matches[0].champion : null}</p>
+           <p>Role:{MatchListDTO && MatchListDTO.matches[0] ? MatchListDTO.matches[0].role : null}</p>
+           <p>Lane: {MatchListDTO && MatchListDTO.matches[0] ? MatchListDTO.matches[0].lane : null}</p>
+           
 
-                />
 
-            
-            
-            
-            
-            )}
         </React.Fragment>
 
 
     )
 
-    
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
+MatchHistory.propTypes = {
+    MatchListDTO: PropTypes.array
+}
 
 
 export default MatchHistory

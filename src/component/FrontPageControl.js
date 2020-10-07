@@ -31,6 +31,7 @@ class FrontPage extends React.Component {
     handleMatchListSearch = () => {
       const {dispatch,SummonerDTO} = this.props
       dispatch(makeMatchHistoryCall(SummonerDTO.accountId))
+     
 
     }
     render() {

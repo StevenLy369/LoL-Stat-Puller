@@ -81,7 +81,7 @@ export const makeMatchHistoryCall = (accountId) => {
     .then(
       (jsonifiedResponse) => {
         dispatch(matchHistorySuccess(jsonifiedResponse)); 
-        console.log(jsonifiedResponse)
+        
       })
       
     .catch((error) => {
