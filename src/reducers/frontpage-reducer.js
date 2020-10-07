@@ -4,7 +4,7 @@ let initialState = {
 	isLoading: false,
 	SummonerDTO: [],
 	AccountInfo: {},
-	MatchListDTO:[],
+	MatchListDTO: [],
 	error: null
 };
 

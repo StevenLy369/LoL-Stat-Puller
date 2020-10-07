@@ -36,7 +36,7 @@ class FrontPage extends React.Component {
     }
     render() {
         
-        const { error, isLoading,SummonerDTO,AccountInfo,MatchListDTO} = this.props;
+        const { error, isLoading, SummonerDTO, AccountInfo, MatchListDTO} = this.props;
         if (error) {
           return <React.Fragment>Error: {error.message}</React.Fragment>;
         } else if (isLoading) {
@@ -62,6 +62,7 @@ const mapStateToProps = state => {
         SummonerDTO: state.SummonerDTO,
         AccountInfo: state.AccountInfo,
         isLoading: state.isLoading,
+        MatchListDTO: state.MatchListDTO,
         error: state.error
     }
 }
