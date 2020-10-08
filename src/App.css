@@ -1,6 +1,8 @@
 
 .profile-img{
   border-radius: 300px;
+  width: 150px;
+  height: auto;
 
 }
 
@@ -11,4 +13,10 @@ body{
   color: whitesmoke;
   font-size: 30px;
   
+}
+
+.header-icon{
+  width: 150px;
+  height: auto;
+
 }

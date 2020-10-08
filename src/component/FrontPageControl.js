@@ -4,7 +4,7 @@ import { makeApiCall,makeApiSummonerCall, makeMatchHistoryCall} from '../actions
 import SummonerInfo from './SummonerInfo';
 import SummonerSearchBar from './SummonerSearchBar';
 import MatchHistory from './MatchHistory';
-
+import Header from './Header';
 
 class FrontPage extends React.Component {
     constructor(props){
@@ -44,6 +44,7 @@ class FrontPage extends React.Component {
         } else {
           return (
             <React.Fragment>
+              <Header />
               <button onClick={this.handleAccountSearch}>Check Rank</button>
               <button onClick={this.handleMatchListSearch}>Check Match history</button>
 

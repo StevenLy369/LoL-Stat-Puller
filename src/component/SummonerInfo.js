@@ -20,6 +20,7 @@ function SummonerInfo(props) {
    
     return (
         <React.Fragment>
+            
             <p>Summoner Name: {SummonerDTO.name}</p>  {SummonerDTO.profileIconId ? <img className="profile-img" src={`http://ddragon.bangingheads.net/cdn/10.19.1/img/profileicon/${SummonerDTO.profileIconId}.png`} alt="profile-icon"></img> : null}
             <p>Summoner Level: {SummonerDTO.summonerLevel}</p>
             <p>{AccountInfo[0] ? AccountInfo[0].tier : null} {AccountInfo[0] ? AccountInfo[0].rank : null}</p>
